@@ -7,7 +7,7 @@ export const createUser = async (data) => {
       id: true,
       name: true,
       email: true,
-      password: true,
+      password: false,
       phone: true,
       createdAt: true,
       updatedAt: true,

@@ -1,4 +1,4 @@
-import { prisma } from "../services/prisma"
+import { prisma } from "../services/prisma";
 
 export const createUser = async (data) => {
   const user = await prisma.user.create({
@@ -7,14 +7,14 @@ export const createUser = async (data) => {
       id: true,
       name: true,
       email: true,
-      password: false,
+      password: true,
       phone: true,
       createdAt: true,
-      updatedAt: true
+      updatedAt: true,
     },
-  })
-  return user
-}
+  });
+  return user;
+};
 
 export const getAll = async () => {
   const users = await prisma.user.findMany({
@@ -25,17 +25,17 @@ export const getAll = async () => {
       password: false,
       phone: true,
       createdAt: true,
-      updatedAt: true
-    }
-  })
+      updatedAt: true,
+    },
+  });
 
-  return users
-}
+  return users;
+};
 
 export const getById = async (id) => {
   const user = await prisma.user.findUnique({
     where: {
-      id
+      id,
     },
     select: {
       id: true,
@@ -44,17 +44,17 @@ export const getById = async (id) => {
       password: false,
       phone: true,
       createdAt: true,
-      updatedAt: true
-    }
-  })
+      updatedAt: true,
+    },
+  });
 
-  return user
-}
+  return user;
+};
 
 export const updateUser = async (id, data) => {
   const user = await prisma.user.update({
     where: {
-      id
+      id,
     },
     data,
     select: {
@@ -64,20 +64,19 @@ export const updateUser = async (id, data) => {
       password: false,
       phone: true,
       createdAt: true,
-      updatedAt: true
-    }
-  })
+      updatedAt: true,
+    },
+  });
 
-  return user
-}
-
+  return user;
+};
 
 export const deleteuser = async (id) => {
   await prisma.user.delete({
     where: {
-      id
-    }
-  })
+      id,
+    },
+  });
 
-  return
-}
+  return;
+};

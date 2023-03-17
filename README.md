@@ -5,7 +5,7 @@
 Para iniciar o banco de dados só tem que abrir uma aba no terminal e rodar o comando:
 `docker compose up`
 
-Para detener o banco so rpecisa inseriri o comando:
+Para detener o banco so precisa inseriri o comando:
 `ctrl + c`
 
 ### API
